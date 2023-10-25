@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="text-center">Manage Product</h1>
+  <button (click)="addPage()" class="btn btn-outline-dark mt-4 mb-3 p-3">Add New Product</button>
+  <table class="table table-dark text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Count</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of pdata,let j=index">
+        <td class="border p-3">{{j+1}}</td>
+        <td class="border p-3">{{i.pname}}</td>
+        <td class="border p-3">
+          <img style="height: 100px;" src={{i.image}} alt="">
+        </td>
+        <td class="border p-3">{{i.description}}</td>
+        <td class="border p-3">{{i.price}}</td>
+        <td class="border p-3">{{i.rating}}</td>
+        <td class="border p-3">{{i.count}}</td>
+        <td class="border p-3">
+          <div style="display:flex;">
+            <button (click)="editPage(i._id)" class="btn btn-warning mt-3 me-2"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button (click)="deleteProduct(i._id)" class="btn btn-danger mt-3 me-2"><i class="fa-solid fa-trash-can"></i></button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

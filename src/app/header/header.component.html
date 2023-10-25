@@ -1,0 +1,18 @@
+<nav class="navbar bg-body-tertiary w-100">
+  <div class="container-fluid bg-dark" style="height: 80px;">
+    <a class="navbar-brand ms-5" href="#">
+      <i class="fa-solid fa-2xl fa-bounce fa-cart-shopping" style="color: #fe9501;"></i>
+      <span class="ms-3 text-white">Shoppy</span>
+    </a>
+
+    <div *ngIf="login">
+      <div (click)="cart()" class="bg-light btn text-dark py-2 px-3 me-4 border rounded">
+        Cart {{count}}
+      </div>
+      <i (click)="toWishlist()" class="fa-solid fa-xl fa-heart ms-auto me-4" style="color: #f5081b;"></i>
+      <button (click)="logout()" class="btn btn-warning">Logout</button>
+
+    </div>
+
+  </div>
+</nav>

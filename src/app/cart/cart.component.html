@@ -1,0 +1,36 @@
+<div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Count</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of pdatas,let j=index">
+            <th scope="row">{{j+1}}</th>
+            <td class="text-center"><h4>{{i.pname}}</h4>
+                <img src="{{i.image}}" alt="" style="height: 150px;">
+            </td>
+            <td>{{i.description}}</td>
+            <td>{{i.price}}</td>
+            <td>
+                <button (click)="decrement(i._id)" class="btn btn-dark">-</button>
+                <p class="w-25">{{i.quantity}}</p>
+                <button (click)="increment(i._id)" class="btn btn-dark">+</button>
+            </td>
+            <td>
+              <button (click)="remove(i._id)" class="btn btn-danger">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <h3>Cart Total Price {{total}}</h3>
+    </div>
+
+</div>
